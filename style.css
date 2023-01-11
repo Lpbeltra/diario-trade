@@ -1,0 +1,17 @@
+#insertTrade {
+    padding: 5px;
+    padding-top: 15px;
+    border: 1px solid black;
+    margin: 100px auto;
+    height: 160px;
+    width: 1290px;
+    border-radius: 20px;
+    position: relative;
+    display: inline-block;
+    background-color: blanchedalmond;
+}
+
+#comentarioTrade {
+    text-align: left;
+    resize: none;
+}
