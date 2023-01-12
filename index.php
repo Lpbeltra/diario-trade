@@ -71,13 +71,13 @@ require_once "database.php";
 $instance = new Database();
 $connection = $instance->connect();
 
-$result = mysqli_query($connection, "SELECT * FROM salve");
+$result = mysqli_query($connection, "SELECT * FROM operacoes");
 
 while ($row = mysqli_fetch_array($result)) {
     echo "<tr>";
-    echo "<td>".$row['id']."</td>\n";
-    echo "<td>".$row['descricao']."</td>\n";
-    echo "<td>".$row['nome_qualquer']."</td>\n";
+    echo "<td>".$row['operacoes_id']."</td>\n";
+    echo "<td>".$row['data']."</td>\n";
+    echo "<td>".$row['hora']."</td>\n";
     echo "</tr>";
 }
 ?>
