@@ -59,13 +59,25 @@
             <label for="comentarioTrade"> Comentário sobre a operação: </label>
             <textarea id="comentarioTrade" placeholder="Escreva aqui..." style="width: 500px; height: 100px; margin-left: 5px; position: absolute;" rows="5" cols="100" wrap="soft"></textarea>
         </form>
-
     </div>
-
-
-
 
     <script src='script.js'></script>
 </body>
 </html>
 
+<?php
+require_once "database.php";
+
+$instance = new Database();
+$connection = $instance->connect();
+
+$result = mysqli_query($connection, "SELECT * FROM salve");
+
+while ($row = mysqli_fetch_array($result)) {
+    echo "<tr>";
+    echo "<td>".$row['id']."</td>\n";
+    echo "<td>".$row['descricao']."</td>\n";
+    echo "<td>".$row['nome_qualquer']."</td>\n";
+    echo "</tr>";
+}
+?>
