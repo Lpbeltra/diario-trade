@@ -1,3 +1,19 @@
+<?php
+require_once "database.php";
+
+$instance = new Database();
+$connection = $instance->connect();
+$result = mysqli_query($connection, "SELECT * FROM operacoes");
+$addTrade = new Database();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $addTrade->add($_POST['ativo'], $_POST['dataTrade'], $_POST['horaTrade'], $_POST['pontaTrade'], $_POST['resultadoTrade'], $_POST['pontosTrade'], $_POST['valorTrade'], $_POST['padraoOp'], $_POST['comentarioTrade']);
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +25,7 @@
 </head>
 <body>
     <div id='insertTrade' style="display: inline-block">
-        <form class="form" method="post" action="./database.php">
+        <form class="form" method="post" action="index.php">
 
             <label for="ativo">Ativo</label>
             <select class="form-select d-inline" name="ativo" id="ativo" style="width: 5%; margin-right: 0,5%;">   
@@ -42,7 +58,7 @@
             <input type="number" step="0.00,5" name="valorTrade" min="0.00,5" style="width: 5%; margin-right: 0,5%;">
 
             <label for="padraoOp">Padrão</label>
-            <select class="form-select d-inline" name="padraoOp" id="pontaTrade" style="width: 15%; margin-right: 0,5%;">
+            <select class="form-select d-inline" name="padraoOp" style="width: 15%; margin-right: 0,5%;">
                 <option value="Regressão às médias">Regressão às médias</option>
                 <option value="Realinhamento de médias">Realinhamento de médias</option>
                 <option value="Bandeiras e flâmulas">Bandeiras e flâmulas</option>
@@ -58,6 +74,8 @@
 
             <label for="comentarioTrade"> Comentário sobre a operação: </label>
             <textarea id="comentarioTrade" placeholder="Escreva aqui..." style="width: 500px; height: 100px; margin-left: 5px; position: absolute;" rows="5" cols="100" wrap="soft"></textarea>
+            
+            <button class='botao' style='margin-left: 650px; '> Registrar trade </button>
         </form>
     </div>
 
@@ -65,19 +83,3 @@
 </body>
 </html>
 
-<?php
-require_once "database.php";
-
-$instance = new Database();
-$connection = $instance->connect();
-
-$result = mysqli_query($connection, "SELECT * FROM operacoes");
-
-while ($row = mysqli_fetch_array($result)) {
-    echo "<tr>";
-    echo "<td>".$row['operacoes_id']."</td>\n";
-    echo "<td>".$row['data']."</td>\n";
-    echo "<td>".$row['hora']."</td>\n";
-    echo "</tr>";
-}
-?>
