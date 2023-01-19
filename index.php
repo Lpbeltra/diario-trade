@@ -1,19 +1,3 @@
-<?php
-require_once "database.php";
-
-$instance = new Database();
-$connection = $instance->connect();
-$result = mysqli_query($connection, "SELECT * FROM operacoes");
-$addTrade = new Database();
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    $addTrade->add($_POST['ativo'], $_POST['dataTrade'], $_POST['horaTrade'], $_POST['pontaTrade'], $_POST['resultadoTrade'], $_POST['pontosTrade'], $_POST['valorTrade'], $_POST['padraoOp'], $_POST['comentarioTrade']);
-
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,65 +5,90 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='style.css'/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>Document</title>
 </head>
+
 <body>
-    <div id='insertTrade' style="display: inline-block">
-        <form class="form" method="post" action="index.php">
+    <div class='container' id='container' style='margin-top: 20px;'>
+        <h4>Inserir nova operação</h4>
+        <form style="margin-top: 35px" action="inserttrade.php" method="post">
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Ativo</label>
+                <select class="form-select" name ="ativo" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option value="WDO">Mini - dolar</option>
+                    <option value="WIN">Mini - indice</option>
+                </select>
+            </div>
 
-            <label for="ativo">Ativo</label>
-            <select class="form-select d-inline" name="ativo" id="ativo" style="width: 5%; margin-right: 0,5%;">   
-                <option value="DOL">DOL</option>
-                <option value="WIN">WIN</option>
-            </select> 
+            <div class="input-group mb-3">
+                <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">Data</span>
+                <input type="datetime-local" name="data" class="form-control" aria-label="date" aria-describedby="addon-wrapping">
+                </div>
+            </div>
 
-            <label for="dataTrade">Data</label> 
-            <input id='dataTrade' required class='inputs' type="date" style="margin-right: 0,5%;">
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Ponta</label>
+                <select class="form-select" name="ponta" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option value="compradora">Compradora</option>
+                    <option value="vendedora">Vendedora</option>
+                </select>
+            </div>
 
-            <label for="horaTrade">Hora</label> 
-            <input id='horaTrade' required class='inputs' type="time" style="margin-right: 0,5%;">
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Resultado</label>
+                <select class="form-select" name="resultado" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option value="Gain">Gain</option>
+                    <option value="loss">Loss</option>
+                </select>
+            </div>
 
-            <label for="pontaTrade">Ponta</label>
-            <select class="form-select d-inline" name="pontaTrade" id="pontaTrade" style="width: 8%; margin-right: 0,5%;">
-                <option value="compradora">Compradora</option>
-                <option value="vendedora">Vendedora</option>
-            </select> 
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Pontos</label>
+                <input type="number" name="pontos" class="form-control" placeholder="Se loss, insira negativo..." aria-label="Number" aria-describedby="addon-wrapping">
+            </div>
 
-            <label for="resultadoTrade">Resultado</label>
-            <select class="form-select d-inline" name="resultadoTrade" id="resultadoTrade" style="width: 8%; margin-right: 0,5%;">
-                <option value="gain">Gain</option>
-                <option value="Loss">Loss</option>
-            </select> 
+            <div class="input-group mb-3">
+                <span class="input-group-text">Resultado</span>
+                <input type="number" name="resultadoValor" step="0.01" min="0.01" placeholder="Se loss, insira negativo..." class="form-control" aria-label="Amount (to the nearest dollar)">
+                <span class="input-group-text">$</span>
+            </div>
 
-            <label for="pontosTrade">Pontos</label> 
-            <input id='pontosTrade' required class='inputs' type="number" style="width: 5%; margin-right: 0,5%;">
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Padrão</label>
+                <select class="form-select" name="padrao" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option value="Regressão às médias">Regressão às médias</option>
+                    <option value="Realinhamento de médias">Realinhamento de médias</option>
+                    <option value="Bandeiras e flâmulas">Bandeiras e flâmulas</option>
+                    <option value="Correção até retração">Correção até retração</option>
+                    <option value="Rompimento">Rompimento</option>
+                    <option value="Pullbacks">Pullbacks</option>
+                    <option value="Power breakout">Power breakout</option>
+                    <option value="Rejeiçao em Sup/Res">Rejeiçao em Sup/Res</option>
+                    <option value="Desrespeitando padrão operacional">Desrespeitando padrão operacional</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            </div>
 
-            <label for="valorTrade">Resultado valor</label> 
-            <input type="number" step="0.00,5" name="valorTrade" min="0.00,5" style="width: 5%; margin-right: 0,5%;">
+            <div class="input-group mb-3">
+                <span class="input-group-text" >Comentário</span>
+                <textarea class="form-control" name="comentario" placeholder="Um breve comentário sobre a operação..." aria-label="With textarea"></textarea>
+            </div>
 
-            <label for="padraoOp">Padrão</label>
-            <select class="form-select d-inline" name="padraoOp" style="width: 15%; margin-right: 0,5%;">
-                <option value="Regressão às médias">Regressão às médias</option>
-                <option value="Realinhamento de médias">Realinhamento de médias</option>
-                <option value="Bandeiras e flâmulas">Bandeiras e flâmulas</option>
-                <option value="Correção até retração">Correção até retração</option>
-                <option value="Rompimento">Rompimento</option>
-                <option value="Pullbacks">Pullbacks</option>
-                <option value="Power breakout">Power breakout</option>
-                <option value="Rejeiçao em Sup/Res">Rejeiçao em Sup/Res</option>
-                <option value="Desrespeitando padrão operacional">Desrespeitando padrão operacional</option>
-            </select> 
+            <div style="text-align:right">
+                <button class="btn btn-primary" type="submit" style="margin-top: 10px">Inserir operação</button>
+            </div>
 
-            <p></p>
-
-            <label for="comentarioTrade"> Comentário sobre a operação: </label>
-            <textarea id="comentarioTrade" placeholder="Escreva aqui..." style="width: 500px; height: 100px; margin-left: 5px; position: absolute;" rows="5" cols="100" wrap="soft"></textarea>
-            
-            <button class='botao' style='margin-left: 650px; '> Registrar trade </button>
         </form>
     </div>
 
     <script src='script.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
 
