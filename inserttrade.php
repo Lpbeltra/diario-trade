@@ -1,5 +1,4 @@
 <?php
-
 include 'connect.php';
 
 $ativo = $_POST['ativo'];
@@ -10,7 +9,6 @@ $pontos = $_POST['pontos'];
 $resultadoValor = $_POST['resultadoValor'];
 $padrao = $_POST['padrao'];
 $comentario = $_POST['comentario'];
-
 $sql = "INSERT INTO `operacoes`(`ativo`, `data_trade`, `ponta`, `resultado`, `pontos`, `resultado_valor`, `padrao`, `comentario`) VALUES ('$ativo', '$data','$ponta','$resultado', '$pontos', '$resultadoValor','$padrao','$comentario')";
 $inserir = mysqli_query($connect,$sql);
 ?>
@@ -21,5 +19,6 @@ $inserir = mysqli_query($connect,$sql);
     <h4 style="text-align: center"> Operação adicionada com sucesso!</h4>
     <div style="padding-top: 20px; text-align: center">
         <a href="index.php" role="button" class="btn btn-primary">Inserir nova operação</a>
+        <a href="dashboard.php" role="button" class="btn btn-primary">ir para o Dashboard</a>
     </div>
 </div>

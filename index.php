@@ -33,8 +33,8 @@
                 <label class="input-group-text" for="inputGroupSelect01">Ponta</label>
                 <select class="form-select" name="ponta" id="inputGroupSelect01">
                     <option selected>Choose...</option>
-                    <option value="compradora">Compradora</option>
-                    <option value="vendedora">Vendedora</option>
+                    <option value="Compradora">Compradora</option>
+                    <option value="Vendedora">Vendedora</option>
                 </select>
             </div>
 
