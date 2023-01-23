@@ -11,6 +11,37 @@
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  href="dashboard.php">Dashboard</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="addtrade.php">Inserir nova operação</a>
+            </li>
+            <li class="nav-item">
+<!--             <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown link
+            </a> -->
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+            </li>
+        </ul>
+        </div>
+    </div>
+    </nav>
     <div class="container" style="margin-top: 40px;">
         <h3>Dashboard</h3>
         <br>
@@ -55,7 +86,12 @@
                 <td><?php echo $resultadoValor ?></td>
                 <td><?php echo $padrao ?></td>
                 <td><?php echo $comentario ?></td>
-                <td><a class="btn btn-warning btn-sm" id="editButton" style='color:#fff;' href="edittrade.php?id=<?php echo $id ?>" role="button"><i class="far fa-edit"></i>&nbsp;Editar</a></td>
+                <td>
+                    <a class="btn btn-warning btn-sm" id="editButton" style='color:#fff;' href="edittrade.php?id=<?php echo $id ?>" role="button"><i class="far fa-edit"></i>&nbsp;Editar</a>
+
+                    <a class="btn btn-danger btn-sm" id="editButton" style='color:#fff;' href="deletetrade.php?id=<?php echo $id ?>" role="button"><i class="fa-solid fa-trash"></i>&nbsp;Excluir</a>
+            
+                </td>
                 </tr>
 
                 <?php } ?>
