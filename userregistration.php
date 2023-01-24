@@ -15,24 +15,24 @@
 <body>
     <div class="container" style="width: 650px; margin-top: 150px; border: 2px solid #f3f3f3; border-radius: 15px; -webkit-box-shadow: 10px 10px 9px 0px rgba(199,189,199,1); -moz-box-shadow: 10px 10px 9px 0px rgba(199,189,199,1); box-shadow: 10px 10px 9px 0px rgba(199,189,199,1);">
         <div style="padding: 10px">
-            <form class="row g-3 needs-validation" novalidate>
+            <form class="row g-3 needs-validation" novalidate action="insertuser.php" method="post">
                 <div class="col-md-4">
                     <label for="validationCustom01" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="validationCustom01" required>
+                    <input type="text" class="form-control" name="nomeusuario" required>
                     <div class="valid-feedback">
                     Ok!
                     </div>
                 </div>
                 <div class="col-md-4">
                     <label for="validationCustom02" class="form-label">Sobrenome</label>
-                    <input type="text" class="form-control" id="validationCustom02" required>
+                    <input type="text" class="form-control" name="sobrenome" required>
                     <div class="valid-feedback">
                     Ok!
                     </div>
                 </div>
                 <div class="col-md-4">
                     <label for="validationCustom03" class="form-label">E-mail</label>
-                    <input type="text" class="form-control" id="validationCustom02" required>
+                    <input type="text" class="form-control" name="mail" required>
                     <div class="valid-feedback">
                     Ok!
                     </div>
@@ -41,7 +41,7 @@
                     <label for="validationCustomUsername" class="form-label">Login de usuário</label>
                     <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                        <input type="text" class="form-control" name="userlogin" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
                             Isira um login
                         </div>
@@ -51,7 +51,7 @@
                     <label for="validationCustomUsername" class="form-label">Senha</label>
                     <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend"><i class="fa-solid fa-key"></i></span>
-                        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                        <input type="password" class="form-control" name="passwd1" id="passwd1" required>
                         <div class="invalid-feedback">
                             Isira uma senha
                         </div>
@@ -61,7 +61,7 @@
                     <label for="validationCustomUsername" class="form-label">Repita a senha</label>
                     <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend"><i class="fa-solid fa-key"></i></span>
-                        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                        <input type="password" class="form-control" name="passwd2" id="passwd2" oninput="validatePassword(this)" required>
                         <div class="invalid-feedback">
                             As senhas diferem!
                         </div>
@@ -73,6 +73,8 @@
             </form>
         </div>
     </div>
+
+<script type="text/javascript" src="functions.js"></script>
 </body>
 
 </html>
