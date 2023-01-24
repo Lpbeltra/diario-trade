@@ -6,8 +6,9 @@ $nomeusuario = $_POST['nomeusuario'];
 $sobrenome = $_POST['sobrenome'];
 $mail = $_POST['mail'];
 $userlogin = $_POST['userlogin'];
-$passwd = $_POST['passwd1'];
-$sql = "INSERT INTO `usuarios`(`nomeusuario`, `sobrenome`, `mail`, `userlogin`, `passwd`) VALUES ('$nomeusuario','$sobrenome','$mail','$userlogin','sha1('$passwd')')";
+$passwd = $_POST['passwd2'];
+$status = 'Ativo';
+$sql = "INSERT INTO `usuarios`(`nomeusuario`, `sobrenome`, `mail`, `userlogin`, `passwd`, `status`) VALUES ('$nomeusuario','$sobrenome','$mail','$userlogin',sha1('$passwd'), '$status')";
 $insert = mysqli_query($connect,$sql);
 
 ?>

@@ -13,25 +13,22 @@
 </head>
 <body>
     <div id="loginarea" class="container" style="width: 280px; margin-top: 200px; border: 2px solid #f3f3f3; border-radius: 15px; -webkit-box-shadow: 10px 10px 9px 0px rgba(199,189,199,1); -moz-box-shadow: 10px 10px 9px 0px rgba(199,189,199,1); box-shadow: 10px 10px 9px 0px rgba(199,189,199,1);">
-
         <div style="padding: 10px">
-            <form>
+            <form action="index1.php" method="post">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">@</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" name="username" class="form-control" placeholder="E-mail" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-key"></i></span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" name="userpasswd" placeholder="Senha" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
+                <div style="text-align:center">
+                    <button type="submit" class="btn btn-sm btn-success" >Log in</button>
+                </div>
+                <a href="userregistration.php" style="font-size:smaller; text-align:center; margin-left: 80px">Cadastre-se!</a>
             </form>
-
-            <div>
-                <button type="submit" class="btn btn-sm btn-success">Log in</button>
-            </div>
-            
         </div>
-
     </div>
 </body>
 </html>

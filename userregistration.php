@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 <div style="text-align:center; width: 650px;">
-                    <button type="submit" style="width: 130px" class="btn btn-sm btn-success">Registrar!</button>
+                    <button type="submit" style="width: 130px" onclick="verifySubmit()" class="btn btn-sm btn-success">Registrar!</button>
                 </div>
             </form>
         </div>
