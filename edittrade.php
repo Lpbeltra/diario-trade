@@ -132,6 +132,7 @@ $id = $_GET['id'];
             </div>
 
             <div style="text-align:right">
+                <button class="btn btn-primary" href="dashboard.php" style="margin-top: 10px; margin-right:250px">Voltar</button>
                 <button class="btn btn-primary" type="submit" style="margin-top: 10px">Enviar alterações</button>
             </div>
 

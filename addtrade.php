@@ -12,19 +12,20 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#"style="font-style:italic; padding-bottom: 15px">Trade Diary</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-            <li class="nav-item">
-            <a class="nav-link" href="dashboard.php">Dashboard</a>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" style="padding-top:40px" href="dashboard.php">Dashboard</a>
+            </li>
+            <a class="nav-link" href="addtrade.php" style="width:200px; padding-top:40px">Inserir nova operação</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="addtrade.php">Inserir nova operação</a>
+            <a class="nav-link" href="index.php" style="margin-left: 850px; font-weight:bold;padding-top:40px">Logout</a>
             </li>
-            <li class="nav-item">
            <!--  <a class="nav-link" href="#">Pricing</a>
             </li>
             <li class="nav-item dropdown">
