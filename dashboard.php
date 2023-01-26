@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!$_SESSION['username']) {
+    header('Location: index.php');
+} 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +20,7 @@
 </head>
 
 <body>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#" style="font-style:italic; padding-bottom: 15px">Trade Diary</a>

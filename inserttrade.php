@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (!$_SESSION['username']) {
+    header('Location: index.php');
+} 
+
 include 'connect.php';
 
 $ativo = $_POST['ativo'];

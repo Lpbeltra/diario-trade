@@ -1,6 +1,12 @@
 <?php
 include 'connect.php';
 $id = $_GET['id'];
+session_start();
+
+if (!$_SESSION['username']) {
+    header('Location: index.php');
+} 
+
 ?>
 
 <!DOCTYPE html>

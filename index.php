@@ -21,7 +21,7 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-key"></i></span>
-                    <input type="text" class="form-control" name="userpasswd" placeholder="Senha" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="password" class="form-control" name="userpasswd" placeholder="Senha" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div style="text-align:center">
                     <button type="submit" class="btn btn-sm btn-success" >Log in</button>

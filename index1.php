@@ -3,6 +3,8 @@
 <script src="https://kit.fontawesome.com/3a5db8322b.js" crossorigin="anonymous"></script>
 
 <?php
+
+session_start();
 include 'connect.php';
 include 'password.php';
 
@@ -28,18 +30,19 @@ $dados = mysqli_fetch_array($search);
 if($total)
 {
     $passdb = $dados["passwd"];
+    $username = $dados["userlogin"];
 
 	if($passwd == $passdb) {   
-		$_SESSION["id_usuario"]= $dados["id"];
-		$_SESSION["nome_usuario"] = stripslashes($dados["userlogin"]);
-		$_SESSION["permissao"]= $dados["status"];
+		$_SESSION["username"] = $usuario;
 		header('Location: dashboard.php');
-		exit;
+
 	} else {
+
 	 ?> <div class="container" style="text-align:center; width: 280px; margin-top: 200px; border: 2px solid #f3f3f3; border-radius: 15px; -webkit-box-shadow: 10px 10px 9px 0px rgba(199,189,199,1); -moz-box-shadow: 10px 10px 9px 0px rgba(199,189,199,1); box-shadow: 10px 10px 9px 0px rgba(199,189,199,1);">
         <h4>Senha inválida!</h4> 
         <a href="index.php">Voltar</a>
         </div>
+
     <?php
 	exit;
     }
