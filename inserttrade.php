@@ -1,12 +1,12 @@
 <?php
 session_start();
+include 'connect.php';
 
 if (!$_SESSION['username']) {
     header('Location: index.php');
 } 
 
-include 'connect.php';
-
+$owner_id = $_POST[$_SESSION["id"]];
 $ativo = $_POST['ativo'];
 $data = $_POST['data'];
 $ponta = $_POST['ponta'];
@@ -15,7 +15,7 @@ $pontos = $_POST['pontos'];
 $resultadoValor = $_POST['resultadoValor'];
 $padrao = $_POST['padrao'];
 $comentario = $_POST['comentario'];
-$sql = "INSERT INTO `operacoes`(`ativo`, `data_trade`, `ponta`, `resultado`, `pontos`, `resultado_valor`, `padrao`, `comentario`) VALUES ('$ativo', '$data','$ponta','$resultado', '$pontos', '$resultadoValor','$padrao','$comentario')";
+$sql = "INSERT INTO `operacoes`(`owner_id`, `ativo`, `data_trade`, `ponta`, `resultado`, `pontos`, `resultado_valor`, `padrao`, `comentario`) VALUES ('$owner_id','$ativo', '$data','$ponta','$resultado', '$pontos', '$resultadoValor','$padrao','$comentario')";
 $inserir = mysqli_query($connect,$sql);
 ?>
 
@@ -33,7 +33,7 @@ $inserir = mysqli_query($connect,$sql);
             <li class="nav-item">
             <a class="nav-link active" href="dashboard.php">Dashboard</a>
             </li>
-            <li class="nav-item">
+<!--             <li class="nav-item">
             <a class="nav-link" aria-current="page" href="addtrade.php">Inserir nova operação</a>
             </li>
             <li class="nav-item">
@@ -42,7 +42,7 @@ $inserir = mysqli_query($connect,$sql);
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Dropdown link
-            </a>
+            </a> -->
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Action</a></li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -56,7 +56,7 @@ $inserir = mysqli_query($connect,$sql);
 <div class="container" style="width: 500px; padding-top: 50px">
     <h4 style="text-align: center"> Operação adicionada com sucesso!</h4>
     <div style="padding-top: 20px; text-align: center">
-        <a href="index.php" role="button" class="btn btn-primary">Inserir nova operação</a>
+        <a href="addtrade.php" role="button" class="btn btn-primary">Inserir nova operação</a>
         <a href="dashboard.php" role="button" class="btn btn-primary">ir para o Dashboard</a>
     </div>
 </div>

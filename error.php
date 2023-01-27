@@ -13,4 +13,5 @@ include 'connect.php';
     <h4 style="text-align: center">Usuário não cadastrado!</h4>
     <div style="padding-top: 20px; text-align: center">
         <a href="index.php" role="button" class="btn btn-primary">Voltar para tela de login</a>
+    <div>
 </div>

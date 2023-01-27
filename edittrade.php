@@ -35,7 +35,7 @@ if (!$_SESSION['username']) {
                 <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="addtrade.php">Inserir nova operação</a>
                 </li>
-                <li class="nav-item">
+<!--                 <li class="nav-item">
                 <a class="nav-link" href="#">Pricing</a>
                 </li>
                 <li class="nav-item dropdown">
@@ -47,7 +47,7 @@ if (!$_SESSION['username']) {
                     <li><a class="dropdown-item" href="#">Another action</a></li>
                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
-                </li>
+                </li> -->
             </ul>
             </div>
         </div>
@@ -138,12 +138,10 @@ if (!$_SESSION['username']) {
             </div>
 
             <div style="text-align:right">
-                <button class="btn btn-primary" href="dashboard.php" style="margin-top: 10px; margin-right:250px">Voltar</button>
-                <button class="btn btn-primary" type="submit" style="margin-top: 10px">Enviar alterações</button>
-            </div>
-
+                <button class="btn btn-primary" type="submit" style="margin-top: 10px; margin-right:260px">Enviar alterações</button>
+                <a class="btn btn-primary" href="dashboard.php" style="margin-top: 10px; margin-right:0px">Voltar</a>
+         </div>
         <?php } ?>
-
         </form>
     </div>
 

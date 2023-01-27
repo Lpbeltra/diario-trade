@@ -1,9 +1,11 @@
 <?php
 session_start();
+echo $_SESSION["id"];
 
-if (!$_SESSION['username']) {
+
+/* if (!$_SESSION['username']) {
     header('Location: index.php');
-} 
+}  */
 ?>
 
 <!DOCTYPE html>
@@ -27,9 +29,9 @@ if (!$_SESSION['username']) {
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" style="padding-top:40px" href="dashboard.php">Dashboard</a>
+            <a class="nav-link" aria-current="page" style="padding-top:40px" href="dashboard.php">Dashboard</a>
             </li>
-            <a class="nav-link" href="addtrade.php" style="width:200px; padding-top:40px">Inserir nova operação</a>
+            <a class="nav-link active" href="addtrade.php" style="width:200px; padding-top:40px">Inserir nova operação</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="index.php" style="margin-left: 850px; font-weight:bold;padding-top:40px">Logout</a>

@@ -8,9 +8,10 @@ session_start();
 if (!$_SESSION['username']) {
     header('Location: index.php');
 } 
+header('Location: dashboard.php');
 ?>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
     <div class="container-fluid">
@@ -27,12 +28,12 @@ if (!$_SESSION['username']) {
             <a class="nav-link" aria-current="page" href="addtrade.php">Inserir nova operação</a>
             </li>
             <li class="nav-item">
-<!--             <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="#">Pricing</a>
             </li>
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Dropdown link
-            </a> -->
+            </a>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Action</a></li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -50,4 +51,4 @@ if (!$_SESSION['username']) {
             <a href="dashboard.php" class="btn btn-sm btn-warning" Style="color:#fff">Voltar</a>
         </div>
     </center>
-</div>
+</div> -->

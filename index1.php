@@ -22,7 +22,7 @@ if(!$usuario || !$undecrypted)
 	exit;
 }
 
-$sql = "SELECT `mail`, `passwd` FROM `usuarios` WHERE `mail` = '$usuario'";
+$sql = "SELECT `mail`, `passwd`, `id` FROM `usuarios` WHERE `mail` = '$usuario'";
 $search = mysqli_query($connect,$sql) or die("Erro no banco de dados!");
 $total = mysqli_num_rows($search);
 $dados = mysqli_fetch_array($search);
@@ -31,9 +31,11 @@ if($total)
 {
     $passdb = $dados["passwd"];
     $username = $dados["userlogin"];
+    $id = $dados["id"];
 
-	if($passwd == $passdb) {   
-		$_SESSION["username"] = $usuario;
+	if($passwd == $passdb) {  
+		$_SESSION['username'] = $usuario;
+		$_SESSION['id'] = $id;
 		header('Location: dashboard.php');
 
 	} else {

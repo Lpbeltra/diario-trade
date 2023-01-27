@@ -15,36 +15,24 @@
 <body>
     <div class="container" style="width: 650px; margin-top: 150px; border: 2px solid #f3f3f3; border-radius: 15px; -webkit-box-shadow: 10px 10px 9px 0px rgba(199,189,199,1); -moz-box-shadow: 10px 10px 9px 0px rgba(199,189,199,1); box-shadow: 10px 10px 9px 0px rgba(199,189,199,1);">
         <div style="padding: 10px">
-            <form class="row g-3 needs-validation" novalidate action="insertuser.php" method="post">
+            <form class="row g-3 needs-validation"  action="insertuser.php" method="post">
                 <div class="col-md-4">
                     <label for="validationCustom01" class="form-label">Nome</label>
                     <input type="text" class="form-control" name="nomeusuario" required>
-                    <div class="valid-feedback">
-                    Ok!
-                    </div>
                 </div>
                 <div class="col-md-4">
                     <label for="validationCustom02" class="form-label">Sobrenome</label>
                     <input type="text" class="form-control" name="sobrenome" required>
-                    <div class="valid-feedback">
-                    Ok!
-                    </div>
                 </div>
                 <div class="col-md-4">
                     <label for="validationCustom03" class="form-label">E-mail</label>
                     <input type="text" class="form-control" name="mail" required>
-                    <div class="valid-feedback">
-                    Ok!
-                    </div>
                 </div>
                 <div class="col-md-4">
                     <label for="validationCustomUsername" class="form-label">Login de usuário</label>
                     <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
                         <input type="text" class="form-control" name="userlogin" aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                            Isira um login
-                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -69,6 +57,7 @@
                 </div>
                 <div style="text-align:center; width: 650px;">
                     <button type="submit" style="width: 130px" onclick="verifySubmit()" class="btn btn-sm btn-success">Registrar!</button>
+                    <a type="button" href="index.php" style="margin-left:px;width: 130px" class="btn btn-sm btn-secondary">Voltar</a>
                 </div>
             </form>
         </div>
