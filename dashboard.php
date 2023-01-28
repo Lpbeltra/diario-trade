@@ -58,7 +58,7 @@ if (!$_SESSION['username']) {
         <br>
         <table class="table">
             <thead>
-                <tr>
+                <tr style="text-align:center">
                 <th scope="col">Ativo</th>
                 <th scope="col">Data</th>
                 <th scope="col">Ponta</th>
@@ -66,7 +66,7 @@ if (!$_SESSION['username']) {
                 <th scope="col">Pontos</th>
                 <th scope="col">Resultado R$</th>
                 <th scope="col">Padrão</th>
-                <th scope="col">Comentário</th>
+                <!-- <th scope="col">Comentário</th> -->
                 </tr>
             </thead>
 
@@ -85,10 +85,10 @@ if (!$_SESSION['username']) {
                     $pontos = $array['pontos'];
                     $resultadoValor = $array['resultado_valor'];
                     $padrao = $array['padrao'];
-                    $comentario = $array['comentario'];
+                    /* $comentario = $array['comentario']; */
                 ?>
 
-                <tr>
+                <tr style="text-align:center">
                 <td><?php echo $ativo ?></td>
                 <td><?php echo $data ?></td>
                 <td><?php echo $ponta ?></td>
@@ -96,18 +96,18 @@ if (!$_SESSION['username']) {
                 <td><?php echo $pontos ?></td>
                 <td><?php echo $resultadoValor ?></td>
                 <td><?php echo $padrao ?></td>
-                <td><?php echo $comentario ?></td>
+                <!-- <td><?php echo $comentario ?></td> -->
                 <td>
                     <a class="btn btn-warning btn-sm" id="editButton" style='color:#fff;' href="edittrade.php?id=<?php echo $id ?>" role="button"><i class="far fa-edit"></i>&nbsp;Editar</a>
-                    <a class="btn btn-danger btn-sm" id="deleteButton" style='color:#fff;' onclick="verifyDelete()"  role="button"><i class="fa-solid fa-trash"></i>&nbsp;Excluir</a>
+                    <a class="btn btn-danger btn-sm" id="deleteButton" style='color:#fff;' href="deletetrade.php?id=<?php echo $id?>"  role="button"><i class="fa-solid fa-trash"></i>&nbsp;Excluir</a>
                 </td>
                 </tr>
                 <?php } ?>
             </tr>
         </table>
     </div>
-    <script>
-        function verifyDelete() {
+<!--     <script>
+        function verifyDelete(opid) {
         Swal.fire({
         title: 'Tem certeza?!',
         text: "Essa ação é irreversivel",
@@ -118,10 +118,12 @@ if (!$_SESSION['username']) {
         confirmButtonText: 'Sim, delete'
         }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href="deletetrade.php?id=<?php echo $id ?>"
+            return true
+        } else {
+            return false
         }
         })
     }
-    </script>
+    </script> -->
 </body>
 </html>

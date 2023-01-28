@@ -1,11 +1,9 @@
 <?php
 session_start();
-echo $_SESSION["id"];
 
-
-/* if (!$_SESSION['username']) {
+if (!$_SESSION['username']) {
     header('Location: index.php');
-}  */
+} 
 ?>
 
 <!DOCTYPE html>

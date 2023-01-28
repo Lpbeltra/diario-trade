@@ -1,12 +1,15 @@
 <?php
-session_start();
 include 'connect.php';
+session_start();
+
+//echo só pra testar se tá trazendo o id
+echo $_SESSION["id"];
 
 if (!$_SESSION['username']) {
     header('Location: index.php');
 } 
 
-$owner_id = $_POST[$_SESSION["id"]];
+$owner_id = $_POST[$_SESSION['id']];
 $ativo = $_POST['ativo'];
 $data = $_POST['data'];
 $ponta = $_POST['ponta'];

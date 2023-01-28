@@ -33,7 +33,7 @@ if($total)
     $username = $dados["userlogin"];
     $id = $dados["id"];
 
-	if($passwd == $passdb) {  
+	if($passwd == $passdb) {
 		$_SESSION['username'] = $usuario;
 		$_SESSION['id'] = $id;
 		header('Location: dashboard.php');
