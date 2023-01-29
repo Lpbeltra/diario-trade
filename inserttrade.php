@@ -8,8 +8,8 @@ echo $_SESSION["id"];
 if (!$_SESSION['username']) {
     header('Location: index.php');
 } 
-
-$owner_id = $_POST[$_SESSION['id']];
+$_POST['id'] = $_SESSION['id'];
+$owner_id = $_POST['id'];
 $ativo = $_POST['ativo'];
 $data = $_POST['data'];
 $ponta = $_POST['ponta'];

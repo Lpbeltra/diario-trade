@@ -1,13 +1,15 @@
 <?php
+session_start();
 include 'connect.php';
 $id = $_GET['id'];
-$sql = "DELETE FROM `operacoes` WHERE id = $id";
+$ownerId = $_SESSION['id'];
+$sql = "DELETE FROM `operacoes` WHERE `owner_id` = $ownerId AND `id` = $id";
 $delete = mysqli_query($connect,$sql);
-session_start();
 
 if (!$_SESSION['username']) {
     header('Location: index.php');
-} 
+}
+
 header('Location: dashboard.php');
 ?>
 

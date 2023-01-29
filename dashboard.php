@@ -17,6 +17,7 @@ if (!$_SESSION['username']) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/3a5db8322b.js" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.0/chart.min.js" integrity="sha512-qKyIokLnyh6oSnWsc5h21uwMAQtljqMZZT17CIMXuCQNIfFSFF4tJdMOaJHL9fQdJUANid6OB6DRR0zdHrbWAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -73,7 +74,8 @@ if (!$_SESSION['username']) {
             <tr>
                 <?php
                 include 'connect.php';
-                $sql = "SELECT * FROM `operacoes`";
+                $ownerId = $_SESSION['id'];
+                $sql = "SELECT * FROM `operacoes` WHERE `owner_id` = $ownerId";
                 $busca = mysqli_query($connect,$sql);
 
                 while ($array = mysqli_fetch_array($busca)) {
@@ -99,14 +101,14 @@ if (!$_SESSION['username']) {
                 <!-- <td><?php echo $comentario ?></td> -->
                 <td>
                     <a class="btn btn-warning btn-sm" id="editButton" style='color:#fff;' href="edittrade.php?id=<?php echo $id ?>" role="button"><i class="far fa-edit"></i>&nbsp;Editar</a>
-                    <a class="btn btn-danger btn-sm" id="deleteButton" style='color:#fff;' href="deletetrade.php?id=<?php echo $id?>"  role="button"><i class="fa-solid fa-trash"></i>&nbsp;Excluir</a>
+                    <a class="btn btn-danger btn-sm" id="deleteButton" style='color:#fff;' onclick="verifyDelete(<?php echo $id?>)"   role="button"><i class="fa-solid fa-trash"></i>&nbsp;Excluir</a>
                 </td>
                 </tr>
                 <?php } ?>
             </tr>
         </table>
     </div>
-<!--     <script>
+    <script>
         function verifyDelete(opid) {
         Swal.fire({
         title: 'Tem certeza?!',
@@ -118,12 +120,12 @@ if (!$_SESSION['username']) {
         confirmButtonText: 'Sim, delete'
         }).then((result) => {
         if (result.isConfirmed) {
-            return true
+            window.location = 'deletetrade.php?id='+opid;
         } else {
             return false
         }
         })
     }
-    </script> -->
+    </script>
 </body>
 </html>
