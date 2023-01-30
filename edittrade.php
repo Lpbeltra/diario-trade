@@ -15,39 +15,29 @@ if (!$_SESSION['username']) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='style.css'/>
+    <?php include 'style.php'; include 'functions.php';?>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>Document</title>
 </head>
 
-<body>
+<body id="body">
+<header></header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="container-fluid" style="height: 25px">
+            <div style="text-align:center" class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                <a class="nav-link active" href="dashboard.php">Dashboard</a>
+                    <a class="nav-link active" aria-current="page" style="padding-left:0px; padding-right:0px; width:120px; padding-top:12px" href="dashboard.php">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="addtrade.php">Inserir nova operação</a>
-                </li>
-<!--                 <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="addtrade.php" style="padding-left:0px; padding-right:0px; width:160px; padding-top:12px">Inserir nova operação</a>
                 </li>
                 <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown link
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-                </li> -->
+                    <a class="nav-link" href="operationspanel.php" style=" width:160px; padding-top:12px">Painel de operações</a>
+                </li>
+                <li class="nav-item" style="margin-left: 750px">
+                    <a class="nav-link" href="logout.php" style=" width:160px; padding-top:12px; font-weight: bold">Logout</a>
+                </li>
             </ul>
             </div>
         </div>
@@ -138,8 +128,8 @@ if (!$_SESSION['username']) {
             </div>
 
             <div style="text-align:right">
-                <button class="btn btn-primary" type="submit" style="margin-top: 10px; margin-right:260px">Enviar alterações</button>
-                <a class="btn btn-primary" href="dashboard.php" style="margin-top: 10px; margin-right:0px">Voltar</a>
+                <button class="btn btn-outline-light" type="submit" style="margin-top: 10px; margin-right:260px">Enviar alterações</button>
+                <a class="btn btn-outline-light" href="dashboard.php" style="margin-top: 10px; margin-right:0px">Voltar</a>
          </div>
         <?php } ?>
         </form>

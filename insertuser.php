@@ -1,6 +1,8 @@
 <?php
 include 'connect.php';
 include 'password.php';
+include 'style.php'; 
+include 'functions.php';
 
 $nomeusuario = $_POST['nomeusuario'];
 $sobrenome = $_POST['sobrenome'];

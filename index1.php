@@ -7,6 +7,8 @@
 session_start();
 include 'connect.php';
 include 'password.php';
+include 'style.php'; 
+include 'functions.php';
 
 $usuario = $_POST['username'];
 $undecrypted = $_POST['userpasswd'];
