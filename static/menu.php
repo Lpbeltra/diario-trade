@@ -9,13 +9,13 @@
 				Menu
 			</li>
 
-			<li class="sidebar-item active">
+			<li id="navDash" class="sidebar-item active">
 				<a class="sidebar-link" href="index.php">
 					<i class="align-middle" data-feather="trending-up"></i> <span class="align-middle">Dashboard</span>
 				</a>
 			</li>
 
-			<li class="sidebar-item">
+			<li id="navPanel" class="sidebar-item">
 				<a class="sidebar-link" href="panel.php">
 					<i class="align-middle" data-feather="book-open"></i> <span class="align-middle">Painel de operações</span>
 				</a>
@@ -27,7 +27,7 @@
 				</a>
 			</li> -->
 
-			<li class="sidebar-item">
+			<li id="navInsert" class="sidebar-item">
 				<a class="sidebar-link" href="inserttrade.php">
 					<i class="align-middle" data-feather="edit-2"></i> <span class="align-middle">Inserir nova operação</span>
 				</a>

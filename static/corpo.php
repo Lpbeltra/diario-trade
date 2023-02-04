@@ -12,7 +12,7 @@
 											<div class="card-body">
 												<div class="row">
 													<div class="col mt-0">
-														<h5 class="card-title">Sales</h5>
+														<h5 class="card-title">Pontos DOL/mês</h5>
 													</div>
 
 													<div class="col-auto">
@@ -32,7 +32,7 @@
 											<div class="card-body">
 												<div class="row">
 													<div class="col mt-0">
-														<h5 class="card-title">Visitors</h5>
+														<h5 class="card-title">Pontos WIN/mês</h5>
 													</div>
 
 													<div class="col-auto">
@@ -54,7 +54,7 @@
 											<div class="card-body">
 												<div class="row">
 													<div class="col mt-0">
-														<h5 class="card-title">Earnings</h5>
+														<h5 class="card-title">R$ acumulado/mês</h5>
 													</div>
 
 													<div class="col-auto">
@@ -74,7 +74,7 @@
 											<div class="card-body">
 												<div class="row">
 													<div class="col mt-0">
-														<h5 class="card-title">Orders</h5>
+														<h5 class="card-title">Total de operações/mês</h5>
 													</div>
 
 													<div class="col-auto">
