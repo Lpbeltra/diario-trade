@@ -10,13 +10,13 @@
 			</li>
 
 			<li id="navDash" class="sidebar-item active">
-				<a class="sidebar-link" href="index.php">
+				<a class="sidebar-link" href="?pagina">
 					<i class="align-middle" data-feather="trending-up"></i> <span class="align-middle">Dashboard</span>
 				</a>
 			</li>
 
 			<li id="navPanel" class="sidebar-item">
-				<a class="sidebar-link" href="panel.php">
+				<a class="sidebar-link" href="?pagina=painel">
 					<i class="align-middle" data-feather="book-open"></i> <span class="align-middle">Painel de operações</span>
 				</a>
 			</li>
@@ -28,7 +28,7 @@
 			</li> -->
 
 			<li id="navInsert" class="sidebar-item">
-				<a class="sidebar-link" href="inserttrade.php">
+				<a class="sidebar-link" href="?pagina=inserirop">
 					<i class="align-middle" data-feather="edit-2"></i> <span class="align-middle">Inserir nova operação</span>
 				</a>
 			</li>
@@ -71,5 +71,6 @@
 				</a>
 			</li>
 		</ul>
+
 	</div>
 </nav>

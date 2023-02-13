@@ -20,7 +20,31 @@
                 include 'topo.php'; 
             ?>
 
-			<?php include 'corpo.php'; ?>
+			<?php 
+				if(isset($_GET['pagina'])) {
+					switch ($_GET['pagina']) {
+						case 'painel':
+							include 'panel.php';
+							break;
+
+						case 'dashboard':
+							include 'data.php';
+							break;
+
+						case 'inserirop':
+							include 'inserttrade.php';
+							break;
+
+						case 'index.php':
+							include 'data.php';
+							break;
+
+						default:
+							include 'data.php';
+							break;
+					}
+				}
+ ?>
 
 			<footer class="footer">
 				<?php include 'footer.php' ?>

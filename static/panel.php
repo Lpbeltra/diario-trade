@@ -1,17 +1,9 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
-<head>
-	<?php
-		session_start();
-        include 'header.php';
-		include 'connect.php';
-		if (!$_SESSION['id']) {
-			header('Location: pages-sign-in.php');
-		} 
-    ?>
+<head> -->
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</head>
-<body>
+<!-- </head>
+<body> -->
 <script>
 	function verifyDelete(opid) {
 		Swal.fire({
@@ -32,12 +24,7 @@
 	}
 	</script>
 	<div class="wrapper">
-		<?php include 'menu.php'; ?>
-
 		<div class="main" >
-			<?php 
-				include 'topo.php'; 
-			?>
 			<div class="container" style="margin-top: 40px; height: 500px" >
 				<table class="table">
 					<thead>
@@ -60,7 +47,6 @@
 						$sql = "SELECT * FROM `operacoes` WHERE `owner_id` = $ownerId";
 						$busca = mysqli_query($connect,$sql);
 						
-
 						while ($array = mysqli_fetch_array($busca)) {
 							$id = $array['id'];
 							$ativo = $array['ativo'];
@@ -90,12 +76,9 @@
 					</tr>
 				</table>
 			</div>
-			<footer class="footer">
-				<?php include 'footer.php' ?>
-			</footer>
 		</div>
 	</div>
 	<script src="js/app.js"></script>
 </body>
 
-</html>
+<!-- </html> -->

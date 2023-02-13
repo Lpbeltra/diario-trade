@@ -38,7 +38,7 @@ if($total)
 		$_SESSION['id'] = $id;
         $_SESSION['nome'] = $nomeusuario;
         $_SESSION['snome'] = $snomeusuario;
-		header('Location: index.php');
+		header('Location: index.php?pagina');
 	} else {
 	 ?> <div class="container" style="text-align:center; width: 280px; margin-top: 200px; border: 2px solid #f3f3f3; border-radius: 15px; -webkit-box-shadow: 10px 10px 9px 0px rgba(199,189,199,1); -moz-box-shadow: 10px 10px 9px 0px rgba(199,189,199,1); box-shadow: 10px 10px 9px 0px rgba(199,189,199,1);">
         <h4>Senha inválida!</h4> 
