@@ -21,12 +21,6 @@
 				</a>
 			</li>
 
-			<!-- <li class="sidebar-item">
-				<a class="sidebar-link" href="pages-Profile.html">
-					<i class="align-middle" data-feather="user"></i> <span class="align-middle">Perfil</span>
-				</a>
-			</li> -->
-
 			<li id="navInsert" class="sidebar-item">
 				<a class="sidebar-link" href="?pagina=inserirop">
 					<i class="align-middle" data-feather="edit-2"></i> <span class="align-middle">Inserir nova operação</span>
@@ -49,8 +43,7 @@
 				</a>
 			</li>
 
-	
-			<li class="sidebar-header">
+			<!-- <li class="sidebar-header">
 				Financeiro
 			</li>
 
@@ -69,8 +62,7 @@
 				<a class="sidebar-link" href="maps-google.html">
 					<i class="align-middle" data-feather="map"></i> <span class="align-middle">Status Financeiro</span>
 				</a>
-			</li>
+			</li> -->
 		</ul>
-
 	</div>
 </nav>

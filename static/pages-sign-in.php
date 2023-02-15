@@ -11,13 +11,10 @@
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
-
-	<link rel="canonical" href="https://demo-basic.adminkit.io/pages-sign-in.html" />
-
-	<title>Sign In | AdminKit Demo</title>
-
+	<!-- <link rel="canonical" href="https://demo-basic.adminkit.io/pages-sign-in.html" /> -->
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+	<title>Sign In | AdminKit Demo</title>
 </head>
 
 <body>
@@ -38,7 +35,7 @@
 							<div class="card-body">
 								<div class="m-sm-4">
 									<div class="text-center">
-										<img src="img/avatars/avatar.jpg" alt="Charles Hall" class="img-fluid rounded-circle" width="132" height="132" />
+										<!-- <img src="img/icons/padlock.png" alt="Charles Hall" class="img-fluid rounded-circle" width="132" height="132" /> -->
 									</div>
 									<form action="dblogin.php" method="post">
 										<div class="mb-3">
@@ -54,21 +51,22 @@
 										</div>
 										<div>
 											<label class="form-check">
-											<input class="form-check-input" type="checkbox" value="remember-me" name="remember-me" checked>
-											<span class="form-check-label">
-											Remember me next time
-											</span>
-										</label>
+												<input class="form-check-input" type="checkbox" value="remember-me" name="remember-me" checked>
+												<span class="form-check-label">
+												Remember me next time
+												</span>
+											</label>
 										</div>
 										<div class="text-center mt-3">
-											<!-- <a href="dblogin.php" type="submit" class="btn btn-lg btn-primary">Sign in</a> -->
-											<button type="submit" class="btn btn-lg btn-primary">Sign in</button>
+											<button type="submit" class="btn btn-lg btn-primary">Entrar</button>
+										</div>
+										<div class="text-center mt-3">
+											<a href="pages-sign-up.php">Registre-se!</a>
 										</div>
 									</form>
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>

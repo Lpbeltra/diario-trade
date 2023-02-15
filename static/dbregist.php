@@ -2,7 +2,6 @@
 include 'connect.php';
 include 'password.php';
 
-
 $nomeusuario = $_POST['nome'];
 $sobrenome = $_POST['sobrenome'];
 $mail = $_POST['email'];
@@ -10,7 +9,6 @@ $passwd = $_POST['password'];
 $status = 'Ativo';
 $sql = "INSERT INTO `usuarios`(`nomeusuario`, `sobrenome`, `mail`, `passwd`, `status`) VALUES ('$nomeusuario','$sobrenome','$mail', sha1('$passwd'), '$status')";
 $insert = mysqli_query($connect,$sql);
-
 ?>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
