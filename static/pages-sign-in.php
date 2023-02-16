@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,6 +69,19 @@
 										</div>
 									</form>
 								</div>
+								<?php
+								if (isset($_SESSION['id'])) {
+									if ($_SESSION['id'] == 'notfound'){
+									?><p style="color:red; text-align:center">Login e/ou senha incorretos!</p> <?php
+									$_SESSION['id'] = '';
+									} else if ($_SESSION['id'] == 'dataempty') {
+										?><p style="color:red; text-align:center">Insira seu login e/ou senha!</p> <?php
+										$_SESSION['id'] = '';
+									} else {
+										header('index.php?');
+									}
+								};
+								?>
 							</div>
 						</div>
 					</div>

@@ -13,7 +13,7 @@
 </head>
 <body>
 	<div class="wrapper">
-		<?php include 'menu.php'; ?>
+		<?php  include 'menu.php'; ?>
 
 		<div class="main">
             <?php 

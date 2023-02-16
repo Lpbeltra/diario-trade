@@ -1,9 +1,6 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head> -->
-	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<!-- </head>
-<body> -->
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
 	function verifyDelete(opid) {
 		Swal.fire({

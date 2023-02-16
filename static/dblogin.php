@@ -12,12 +12,17 @@ $password = sha1($undecrypted);
 
 if(!$usermail || !$undecrypted)
 {
-    ?> <div class="container" style="text-align:center; width: 280px; margin-top: 200px; border: 2px solid #f3f3f3; border-radius: 15px; -webkit-box-shadow: 10px 10px 9px 0px rgba(199,189,199,1); -moz-box-shadow: 10px 10px 9px 0px rgba(199,189,199,1); box-shadow: 10px 10px 9px 0px rgba(199,189,199,1);">
+
+    $_SESSION['id'] = "dataempty";
+    header('Location: pages-sign-in.php');
+    exit;
+    /* ?> 
+    <div class="container" style="text-align:center; width: 280px; margin-top: 200px; border: 2px solid #f3f3f3; border-radius: 15px; -webkit-box-shadow: 10px 10px 9px 0px rgba(199,189,199,1); -moz-box-shadow: 10px 10px 9px 0px rgba(199,189,199,1); box-shadow: 10px 10px 9px 0px rgba(199,189,199,1);">
         <h4>Digite seu login e senha!</h4> 
         <a href="index.php">Voltar</a>
         </div>
     <?php
-	exit;
+	exit; */
 }
 
 $sql = "SELECT `sobrenome`, `nomeusuario`, `mail`, `passwd`, `id` FROM `usuarios` WHERE `mail` = '$usermail'";
@@ -28,7 +33,7 @@ $dados = mysqli_fetch_array($search);
 if($total)
 {
     $passdb = $dados["passwd"];
-    $username = $dados["userlogin"];
+    //$username = $dados["userlogin"];
     $id = $dados["id"];
     $nomeusuario = $dados["nomeusuario"];
     $snomeusuario = $dados["sobrenome"];
@@ -39,20 +44,10 @@ if($total)
         $_SESSION['nome'] = $nomeusuario;
         $_SESSION['snome'] = $snomeusuario;
 		header('Location: index.php?pagina');
-	} else {
-	 ?> <div class="container" style="text-align:center; width: 280px; margin-top: 200px; border: 2px solid #f3f3f3; border-radius: 15px; -webkit-box-shadow: 10px 10px 9px 0px rgba(199,189,199,1); -moz-box-shadow: 10px 10px 9px 0px rgba(199,189,199,1); box-shadow: 10px 10px 9px 0px rgba(199,189,199,1);">
-        <h4>Senha inválida!</h4> 
-        <a href="pages-sign-in.html">Voltar</a>
-        </div>
-    <?php
-	exit;
-    }
+	} 
+    
 } else {
-    ?> <div class="container" style="text-align:center; width: 280px; margin-top: 200px; border: 2px solid #f3f3f3; border-radius: 15px; -webkit-box-shadow: 10px 10px 9px 0px rgba(199,189,199,1); -moz-box-shadow: 10px 10px 9px 0px rgba(199,189,199,1); box-shadow: 10px 10px 9px 0px rgba(199,189,199,1);">
-        <h4>Login não encontrado</h4> 
-        <a href="pages-sign-in.php">Voltar</a>
-        </div>
-    <?php
-	exit;
+    $_SESSION['id'] = "notfound";
+    header('Location: pages-sign-in.php');
 }
 ?>

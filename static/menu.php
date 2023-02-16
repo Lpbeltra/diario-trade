@@ -42,27 +42,8 @@
 					<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Pix</span>
 				</a>
 			</li>
-
-			<!-- <li class="sidebar-header">
-				Financeiro
-			</li>
-
-			<li class="sidebar-item">
-				<a class="sidebar-link" href="charts-chartjs.html">
-					<i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Pagamentos à Receber</span>
-				</a>
-			</li>
-
-			<li class="sidebar-item">
-				<a class="sidebar-link" href="maps-google.html">
-					<i class="align-middle" data-feather="map"></i> <span class="align-middle">Pagamentos Recebidos</span>
-				</a>
-			</li>
-			<li class="sidebar-item">
-				<a class="sidebar-link" href="maps-google.html">
-					<i class="align-middle" data-feather="map"></i> <span class="align-middle">Status Financeiro</span>
-				</a>
-			</li> -->
 		</ul>
 	</div>
 </nav>
+
+<script src="js/app.js"></script>
