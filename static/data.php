@@ -1,18 +1,40 @@
 <?php
 include 'connect.php';
-$sqlWdo = "SELECT SUM(pontos) AS pontosDol FROM `operacoes` WHERE `owner_id` = 16 AND `ativo` = 'WDO'";
-$sqlWin = "SELECT SUM(pontos) AS pontosWin FROM `operacoes` WHERE `owner_id` = 16 AND `ativo` = 'WIN'";
-$sqlMoney = "SELECT SUM(resultado_valor) AS moneyResult FROM `operacoes` WHERE `owner_id` = 16";
+$id = $_SESSION['id'];
+$sqlWdo = "SELECT SUM(pontos) AS pontosDol FROM `operacoes` WHERE `owner_id` = $id AND `ativo` = 'WDO'";
+$sqlWin = "SELECT SUM(pontos) AS pontosWin FROM `operacoes` WHERE `owner_id` = $id AND `ativo` = 'WIN'";
+$sqlMoney = "SELECT SUM(resultado_valor) AS moneyResult FROM `operacoes` WHERE `owner_id` = $id";
 $queryWdo = mysqli_query($connect,$sqlWdo);
 $queryWin = mysqli_query($connect,$sqlWin);
 $queryMoney = mysqli_query($connect,$sqlMoney);
 $resultWdo = mysqli_fetch_array($queryWdo);
 $resultWin = mysqli_fetch_array($queryWin);
 $resultMoney = mysqli_fetch_array($queryMoney);
+$noEntries = '';
+if ($resultWdo['pontosDol'] == 0) {
+    $resultWdo['pontosDol'] = '-';
+};
+
+if ($resultWin['pontosWin'] == 0) {
+    $resultWin['pontosWin'] = '-';
+};
+
+if ($resultMoney['moneyResult'] == 0) {
+    $resultMoneyRound = '-';
+} else {
+    $resultMoneyRound = round($resultMoney['moneyResult'],2);
+};
+
+if ($resultWdo['pontosDol'] == '-' and $resultWin['pontosWin'] == '-' and $resultMoney['moneyResult'] == '-') {
+    $noEntries = 'Insira suas primeiras operações no menu ao lado!';
+};
+
 ?>
 <main class="content">
+<script src="js/app.js"></script>
     <div class="container-fluid p-0">
         <h1 class="h3 mb-3"><strong> Dashboard </strong> Analítico </h1>
+		<h5 style='text-align:right; font-style:italic'><?php echo $noEntries ?></h5>
         <div class="row">
             <div class="col-sm-6">
                 <div class="card">
@@ -70,7 +92,7 @@ $resultMoney = mysqli_fetch_array($queryMoney);
                                 </div>
                             </div>
                         </div>
-                        <h1 class="mt-1 mb-3"><?php echo $resultMoney['moneyResult'] ?></h1>
+                        <h1 class="mt-1 mb-3"><?php echo $resultMoneyRound ?></h1>
                         <div class="mb-0">
                             <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 6.65% </span>
                             <span class="text-muted">Since last week</span>
@@ -90,7 +112,7 @@ $resultMoney = mysqli_fetch_array($queryMoney);
                                 </div>
                             </div>
                         </div>
-                        <h1 class="mt-1 mb-3">64</h1>
+                        <h1 class="mt-1 mb-3">-</h1>
                         <div class="mb-0">
                             <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -2.25% </span>
                             <span class="text-muted">Since last week</span>

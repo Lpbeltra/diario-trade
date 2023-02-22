@@ -22,8 +22,8 @@ $inserir = mysqli_query($connect,$sql);
     <div class="container" style="width: 500px; padding-top: 50px">
         <h4 style="text-align: center"> Operação adicionada com sucesso!</h4>
         <div style="padding-top: 20px; text-align: center">
-            <a href="inserttrade.php" role="button" class="btn btn-primary">Inserir nova operação</a>
-            <a href="index.php" role="button" class="btn btn-primary">ir para o Dashboard</a>
+            <a href="index.php?pagina=inserirop" role="button" class="btn btn-primary">Inserir nova operação</a>
+            <a href="index.php?pagina=dash" role="button" class="btn btn-primary">ir para o Dashboard</a>
         </div>
     </div>
     </header>

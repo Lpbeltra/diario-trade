@@ -10,5 +10,5 @@
         header('Location: pages-sign-in.php');
     }
 
-    header('Location: panel.php');
+    header('Location: index.php?pagina=painel');
 ?>

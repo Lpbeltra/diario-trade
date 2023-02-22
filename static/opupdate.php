@@ -18,7 +18,5 @@ $comentario = $_POST['comentario'];
 $sql = "UPDATE `operacoes` SET `ativo`='$ativo',`data_trade`='$data',`ponta`='$ponta',`resultado`='$resultado',`pontos`='$pontos',`resultado_valor`='$resultadoValor',`padrao`='$padrao',`comentario`='$comentario' WHERE id = $id";
 $update = mysqli_query($connect,$sql);
 
-var_dump($sql);
-
-header('Location: panel.php');
+header('Location: index.php?pagina=dash');
 ?>

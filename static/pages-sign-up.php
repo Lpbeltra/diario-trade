@@ -39,19 +39,19 @@
 									<form action="dbregist.php" method="post">
 										<div class="mb-3">
 											<label class="form-label">Nome</label>
-											<input class="form-control form-control-lg" type="text" name="nome" placeholder="Insira seu nome" />
+											<input class="form-control form-control-lg" style="text-transform:capitalize" type="text" name="nome" placeholder="Insira seu nome" required/>
 										</div>
 										<div class="mb-3">
 											<label class="form-label">Sobrenome</label>
-											<input class="form-control form-control-lg" type="text" name="sobrenome" placeholder="Insira seu sobrenome" />
+											<input class="form-control form-control-lg" style="text-transform:capitalize" type="text" name="sobrenome" placeholder="Insira seu sobrenome" required/>
 										</div>
 										<div class="mb-3">
 											<label class="form-label">Email</label>
-											<input class="form-control form-control-lg" type="email" name="email" placeholder="Insira seu email" />
+											<input class="form-control form-control-lg" type="email" name="email" placeholder="Insira seu email" required/>
 										</div>
 										<div class="mb-3">
 											<label class="form-label">Senha</label>
-											<input class="form-control form-control-lg" type="password" name="password" placeholder="Insira sua senha" />
+											<input class="form-control form-control-lg" type="password" name="password" placeholder="Insira sua senha" required/>
 										</div>
 										<div class="text-center mt-3">
 											<button type="submit" class="btn btn-lg btn-primary">Registrar</button>

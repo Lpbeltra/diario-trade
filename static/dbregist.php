@@ -18,8 +18,7 @@ $insert = mysqli_query($connect,$sql);
     <center>
         <h3>Usuário cadastrado!</h3>
         <div style="margin-top: 10px">
-            <a href="index.php" class="btn btn-sm btn-warning" Style="color:#fff">Ir para o dashboard</a>
-            <a href="pages-sign-up.php" class="btn btn-sm btn-warning" Style="color:#fff">Voltar para tela de cadastro</a>
+            <a href="pages-sign-in.php" class="btn btn-sm btn-primary" Style="color:#fff">Voltar para tela de cadastro</a>
         </div>
     </center>
 </div>

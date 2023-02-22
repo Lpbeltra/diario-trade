@@ -1,6 +1,6 @@
 <nav id="sidebar" class="sidebar js-sidebar">
 	<div class="sidebar-content js-simplebar">
-		<a class="sidebar-brand" href="index.html">
+		<a class="sidebar-brand" href="index.php?pagina=dash">
 			<span class="align-middle">Trading Book</span>
 		</a>
 
@@ -10,7 +10,7 @@
 			</li>
 
 			<li id="navDash" class="sidebar-item active">
-				<a class="sidebar-link" href="?pagina">
+				<a class="sidebar-link" href="?pagina=dash">
 					<i class="align-middle" data-feather="trending-up"></i> <span class="align-middle">Dashboard</span>
 				</a>
 			</li>
@@ -32,14 +32,14 @@
 			</li>
 
 			<li class="sidebar-item">
-				<a class="sidebar-link" href="ui-buttons.html">
-					<i class="align-middle" data-feather="square"></i> <span class="align-middle">Boleto</span>
+				<a class="sidebar-link" href="#">
+					<i class="align-middle" data-feather="square"></i> <span class="align-middle">Setups</span>
 				</a>
 			</li>
 
 			<li class="sidebar-item">
-				<a class="sidebar-link" href="ui-forms.html">
-					<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Pix</span>
+				<a class="sidebar-link" href="#">
+					<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Emotional tracking</span>
 				</a>
 			</li>
 		</ul>

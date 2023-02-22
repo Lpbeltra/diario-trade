@@ -18,7 +18,7 @@ session_start();
 	<!-- <link rel="canonical" href="https://demo-basic.adminkit.io/pages-sign-in.html" /> -->
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-	<title>Sign In | AdminKit Demo</title>
+	<title>Login | Trading Book</title>
 </head>
 
 <body>

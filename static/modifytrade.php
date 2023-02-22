@@ -17,7 +17,6 @@
                 include 'topo.php'; 
 				$id = $_GET['id'];
 				$_SESSION['idop'] = $_GET['id'];
-				echo $id;
                 $sql = "SELECT * FROM `operacoes` WHERE id = $id";
                 $search = mysqli_query($connect,$sql);
 
