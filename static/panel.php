@@ -2,6 +2,7 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
+	//FUNÇÃO DELETE BUTTON
 	function verifyDelete(opid) {
 		Swal.fire({
 		title: 'Tem certeza?',
@@ -23,6 +24,17 @@
 	<div class="wrapper">
 		<div class="main" >
 			<div class="container" style="margin-top: 40px; height: 500px" >
+				<!-- FORM DE FILTRO -->
+				<form action="" method="post">
+					<div style="margin-left: 680px">
+						<input type="date" name="data1">
+						-
+						<input type="date" name="data2">
+						<button class="btn btn-sm btn-primary" type="submit" name="filtrar">Filtrar</button>
+						<button class="btn btn-sm btn-secondary" type="submit" name="filtrar">Reset</button>
+					</div>
+				</form>
+				<!-- CABEÇALHOS -->
 				<table class="table">
 					<thead>
 						<tr style="text-align:center">
@@ -41,7 +53,18 @@
 						<?php
 						include 'connect.php';
 						$ownerId = $_SESSION['id'];
-						$sql = "SELECT * FROM `operacoes` WHERE `owner_id` = $ownerId";
+
+						if (isset($_POST['data1'])){
+							$data1 = $_POST['data1'];
+							$data2 = $_POST['data2'];
+						};
+						if (isset($data1)) {
+							$sql = "SELECT * FROM `operacoes` WHERE `owner_id` = $ownerId AND `data_trade` BETWEEN '$data1' AND '$data2'";						
+						} else {
+							$sql = "SELECT * FROM `operacoes` WHERE `owner_id` = $ownerId";						
+
+						};
+
 						$busca = mysqli_query($connect,$sql);
 						
 						while ($array = mysqli_fetch_array($busca)) {
@@ -64,7 +87,7 @@
 						<td><?php echo $pontos ?></td>
 						<td><?php echo $resultadoValor ?></td>
 						<td><?php echo $padrao ?></td>
-						<!-- <td><?php echo $comentario ?></td> -->
+						<!-- <td><?php //echo $comentario ?></td> -->
 						<td>
 							<a class="btn btn-warning btn-sm" id="editButton" style='color:#fff;' href="modifytrade.php?id=<?php echo $id ?>" role="button"><i class="far fa-edit"></i>&nbsp;Editar</a>
 							<a class="btn btn-danger btn-sm" id="deleteButton" style='color:#fff;' onclick="verifyDelete(<?php echo $id?>)" role="button"><i class="fa-solid fa-trash"></i>&nbsp;Excluir</a>

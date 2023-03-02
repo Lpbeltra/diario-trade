@@ -1,9 +1,22 @@
 <?php
 include 'connect.php';
 $id = $_SESSION['id'];
-$sqlWdo = "SELECT SUM(pontos) AS pontosDol FROM `operacoes` WHERE `owner_id` = $id AND `ativo` = 'WDO'";
-$sqlWin = "SELECT SUM(pontos) AS pontosWin FROM `operacoes` WHERE `owner_id` = $id AND `ativo` = 'WIN'";
-$sqlMoney = "SELECT SUM(resultado_valor) AS moneyResult FROM `operacoes` WHERE `owner_id` = $id";
+    //SQL FILTRO
+if (isset($_POST['data1'])){
+    $data1 = $_POST['data1'];
+    $data2 = $_POST['data2'];
+};
+
+if (isset($data1)) {
+    $sqlWdo = "SELECT SUM(pontos) AS pontosDol FROM `operacoes` WHERE `owner_id` = $id AND `ativo` = 'WDO' AND `data_trade` BETWEEN '$data1' AND '$data2'";
+    $sqlWin = "SELECT SUM(pontos) AS pontosWin FROM `operacoes` WHERE `owner_id` = $id AND `ativo` = 'WIN' AND `data_trade` BETWEEN '$data1' AND '$data2'";
+    $sqlMoney = "SELECT SUM(resultado_valor) AS moneyResult FROM `operacoes` WHERE `owner_id` = $id AND `data_trade` BETWEEN '$data1' AND '$data2'";						
+} else {
+    $sqlWdo = "SELECT SUM(pontos) AS pontosDol FROM `operacoes` WHERE `owner_id` = $id AND `ativo` = 'WDO'";
+    $sqlWin = "SELECT SUM(pontos) AS pontosWin FROM `operacoes` WHERE `owner_id` = $id AND `ativo` = 'WIN'";
+    $sqlMoney = "SELECT SUM(resultado_valor) AS moneyResult FROM `operacoes` WHERE `owner_id` = $id";				
+};
+
 $queryWdo = mysqli_query($connect,$sqlWdo);
 $queryWin = mysqli_query($connect,$sqlWin);
 $queryMoney = mysqli_query($connect,$sqlMoney);
@@ -11,6 +24,7 @@ $resultWdo = mysqli_fetch_array($queryWdo);
 $resultWin = mysqli_fetch_array($queryWin);
 $resultMoney = mysqli_fetch_array($queryMoney);
 $noEntries = '';
+
 if ($resultWdo['pontosDol'] == 0) {
     $resultWdo['pontosDol'] = '-';
 };
@@ -34,6 +48,16 @@ if ($resultWdo['pontosDol'] == '-' and $resultWin['pontosWin'] == '-' and $resul
 <script src="js/app.js"></script>
     <div class="container-fluid p-0">
         <h1 class="h3 mb-3"><strong> Dashboard </strong> Analítico </h1>
+        <!-- FORM DE FILTRO -->
+        <form action="index.php?pagina=dash" method="post">
+            <div style="margin-left: 600px; width: 400px">
+                <input type="date" name="data1">
+                -
+                <input type="date" name="data2">
+                <button class="btn btn-sm btn-primary" type="submit" name="filtrar">Filtrar</button>
+                <button class="btn btn-sm btn-secondary"  type="submit" name="filtrar">Reset</button>
+            </div>
+        </form>
 		<h5 style='text-align:right; font-style:italic'><?php echo $noEntries ?></h5>
         <div class="row">
             <div class="col-sm-6">
