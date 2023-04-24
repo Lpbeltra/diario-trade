@@ -49,8 +49,8 @@ if ($resultWdo['pontosDol'] == '-' and $resultWin['pontosWin'] == '-' and $resul
     <div class="container-fluid p-0">
         <h1 class="h3 mb-3"><strong> Dashboard </strong> Analítico </h1>
         <!-- FORM DE FILTRO -->
-        <form action="index.php?pagina=dash" method="post">
-            <div style="margin-left: 600px; width: 400px">
+        <form action="index.php?pagina=dash" method="post" display="block" style="margin-left: auto; width: 400px">
+            <div style="width: 400px">
                 <input type="date" name="data1">
                 -
                 <input type="date" name="data2">
@@ -76,8 +76,6 @@ if ($resultWdo['pontosDol'] == '-' and $resultWin['pontosWin'] == '-' and $resul
                         </div>
                         <h1 class="mt-1 mb-3"><?php echo $resultWdo['pontosDol'];?></h1>
                         <div class="mb-0">
-                            <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
-                            <span class="text-muted">Since last week</span>
                         </div>
                     </div>
                 </div>
@@ -96,8 +94,6 @@ if ($resultWdo['pontosDol'] == '-' and $resultWin['pontosWin'] == '-' and $resul
                         </div>
                         <h1 class="mt-1 mb-3"><?php echo $resultWin['pontosWin']; ?></h1>
                         <div class="mb-0">
-                            <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 5.25% </span>
-                            <span class="text-muted">Since last week</span>
                         </div>
                     </div>
                 </div>
@@ -118,8 +114,6 @@ if ($resultWdo['pontosDol'] == '-' and $resultWin['pontosWin'] == '-' and $resul
                         </div>
                         <h1 class="mt-1 mb-3"><?php echo $resultMoneyRound ?></h1>
                         <div class="mb-0">
-                            <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 6.65% </span>
-                            <span class="text-muted">Since last week</span>
                         </div>
                     </div>
                 </div>
@@ -138,8 +132,6 @@ if ($resultWdo['pontosDol'] == '-' and $resultWin['pontosWin'] == '-' and $resul
                         </div>
                         <h1 class="mt-1 mb-3">-</h1>
                         <div class="mb-0">
-                            <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -2.25% </span>
-                            <span class="text-muted">Since last week</span>
                         </div>
                     </div>
                 </div>
